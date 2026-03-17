@@ -38,10 +38,9 @@ export default function Client() {
       <section className="mx-auto flex min-h-[720px] w-full max-w-md items-center justify-center">
         <Card className="w-full border-secondary/70 shadow-xl">
           <CardHeader className="space-y-1">
-            <CardTitle>Forgot password</CardTitle>
+            <CardTitle>Forgot your password?</CardTitle>
             <CardDescription>
-              Enter your email and we&apos;ll send you a link to reset your
-              password.
+              Enter the email you use with TeamTrackr, and we’ll send a secure reset link.
             </CardDescription>
           </CardHeader>
 
