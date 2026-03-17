@@ -10,6 +10,10 @@ import {
   Settings,
   Users,
   CreditCard,
+  Contact,
+  FileText,
+  Briefcase,
+  ListChecks,
 } from "lucide-react";
 import {
   Collapsible,
@@ -26,21 +30,19 @@ type NavItem = {
 
 const sections: { title: string; items: NavItem[] }[] = [
   {
-    title: "Platform",
+    title: "CRM",
     items: [
-      { label: "Overview", href: "/dashboard", icon: Home },
-      {
-        label: "Feature",
-        href: "/dashboard/feature",
-        icon: Hammer,
-      },
+      { label: "Clients", href: "/dashboard/clients", icon: Users },
+      { label: "Contacts", href: "/dashboard/contacts", icon: Contact },
+      { label: "Projects", href: "/dashboard/projects", icon: Briefcase },
+      { label: "Invoices", href: "/dashboard/invoices", icon: FileText },
+      { label: "Project Ops", href: "/dashboard/operations", icon: ListChecks },
     ],
   },
   {
     title: "Account",
     items: [
       { label: "Team", href: "/dashboard/team", icon: Users },
-      { label: "Billing", href: "#", icon: CreditCard, disabled: true },
       { label: "Settings", href: "/dashboard/settings", icon: Settings },
     ],
   },
