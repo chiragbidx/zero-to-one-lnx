@@ -5,11 +5,7 @@ import { LayoutFaqSection } from "../components/home/LayoutFaqSection";
 import { LayoutFeatureGridSection } from "../components/home/LayoutFeatureGridSection";
 import { LayoutFooterSection } from "../components/home/LayoutFooterSection";
 import { LayoutHeroSection } from "../components/home/LayoutHeroSection";
-import { LayoutPricingSection } from "../components/home/LayoutPricingSection";
-import { LayoutServicesSection } from "../components/home/LayoutServicesSection";
-import { LayoutSponsorsSection } from "../components/home/LayoutSponsorsSection";
 import { LayoutTeamSection } from "../components/home/LayoutTeamSection";
-import { LayoutTestimonialSection } from "../components/home/LayoutTestimonialSection";
 import { Navbar as LayoutNavbar } from "@/components/layout/navbar";
 import { getAuthSession } from "@/lib/auth/session";
 
@@ -28,19 +24,18 @@ export default async function Home() {
   const defaultHide: string[] = [];
   const whitelist = only.length ? new Set(only) : null;
   const hide = new Set(whitelist ? envHide : [...defaultHide, ...envHide]);
+
+  // New TeamTrackr CRM landing page order: Hero, Features, Benefits, Team, Contact, FAQ, Footer
   const sections = [
     ["layout-hero", <LayoutHeroSection key="layout-hero" />],
-    ["layout-sponsors", <LayoutSponsorsSection key="layout-sponsors" />],
-    ["layout-benefits", <LayoutBenefitsSection key="layout-benefits" />],
     ["layout-features", <LayoutFeatureGridSection key="layout-features" />],
-    ["layout-services", <LayoutServicesSection key="layout-services" />],
-    ["layout-testimonials", <LayoutTestimonialSection key="layout-testimonials" />],
+    ["layout-benefits", <LayoutBenefitsSection key="layout-benefits" />],
     ["layout-team", <LayoutTeamSection key="layout-team" />],
-    ["layout-pricing", <LayoutPricingSection key="layout-pricing" />],
     ["layout-contact", <LayoutContactSection key="layout-contact" />],
     ["layout-faq", <LayoutFaqSection key="layout-faq" />],
     ["layout-footer", <LayoutFooterSection key="layout-footer" />],
   ] as const;
+
   const visibleSections = sections
     .filter(([id]) => (whitelist ? whitelist.has(id) : true))
     .filter(([id]) => !hide.has(id));
@@ -52,7 +47,6 @@ export default async function Home() {
         {visibleSections.map(([, node]) => node)}
       </main>
 
-      {/* lightweight animations defined locally to avoid tailwind config changes */}
       <style>{`
         @keyframes float {
           0% { transform: translateY(0px); }
