@@ -27,7 +27,7 @@ export default async function DashboardPage() {
     .where(eq(users.id, session.userId))
     .limit(1);
 
-  const firstName = user?.firstName || "there";
+  const firstName = user?.firstName || "TeamTrackr user";
 
   return (
     <Client
