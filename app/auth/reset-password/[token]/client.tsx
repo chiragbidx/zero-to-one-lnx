@@ -40,7 +40,7 @@ export default function Client({ token, valid }: ClientProps) {
             <CardHeader className="space-y-1">
               <CardTitle>Link expired</CardTitle>
               <CardDescription>
-                This password reset link is invalid or has expired.
+                This password reset link for TeamTrackr is invalid or has expired.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -62,9 +62,9 @@ export default function Client({ token, valid }: ClientProps) {
       <section className="mx-auto flex min-h-[720px] w-full max-w-md items-center justify-center">
         <Card className="w-full border-secondary/70 shadow-xl">
           <CardHeader className="space-y-1">
-            <CardTitle>Reset password</CardTitle>
+            <CardTitle>Reset your TeamTrackr password</CardTitle>
             <CardDescription>
-              Choose a new password for your account.
+              Enter a new password to regain secure access to your account.
             </CardDescription>
           </CardHeader>
 
